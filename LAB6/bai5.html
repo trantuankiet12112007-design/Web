@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quay số</title>
+  </head>
+  <body>
+    <h2>Chương trình tìm số may mắn</h2>
+    <label for="">Nhập số ngẫu nhiên (1-10): </label>
+    <input type="text" id="so" />
+    <br />
+    <button onclick="quaySo()">Xem kết quả</button>
+    <h3 id="ketqua"></h3>
+
+    <script>
+      function quaySo() {
+        let so = document.getElementById("so").value;
+        let ngaunhien = Math.floor(Math.random() * 10) + 1;
+        if (so == ngaunhien) {
+          document.getElementById("ketqua").innerHTML = "Thắng";
+        } else {
+          document.getElementById("ketqua").innerHTML = "Chưa may mắn";
+        }
+      }
+    </script>
+  </body>
+</html>

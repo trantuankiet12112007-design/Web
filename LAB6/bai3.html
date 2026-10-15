@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>Kiểm tra xếp loại</h2>
+    <label for="">Nhập số điểm (0-100): </label>
+    <input type="text" name="" id="diem" />
+    <br />
+    <button onclick="xepLoai()">Hiển thị</button>
+    <h3 id="ketqua"></h3>
+
+    <script>
+      function xepLoai() {
+        let Diem = document.getElementById("diem").value;
+        if (Diem >= 90) {
+          document.getElementById("ketqua").innerHTML = "A";
+        } else if (Diem >= 80) {
+          document.getElementById("ketqua").innerHTML = "B";
+        } else if (Diem >= 70) {
+          document.getElementById("ketqua").innerHTML = "C";
+        } else if (Diem >= 60) {
+          document.getElementById("ketqua").innerHTML = "D";
+        } else document.getElementById("ketqua").innerHTML = "F";
+      }
+    </script>
+  </body>
+</html>

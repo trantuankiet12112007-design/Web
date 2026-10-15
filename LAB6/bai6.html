@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trò chơi</title>
+  </head>
+  <body>
+    <h2>Chương trình oẳn tù tì</h2>
+    <label for="">Lựa chọn (đá - giấy - kéo): </label>
+    <button onclick="luaChon('đá')">Đá</button>
+    <button onclick="luaChon('giấy')">Giấy</button>
+    <button onclick="luaChon('kéo')">Kéo</button>
+    <h3 id="ketqua"></h3>
+
+    <script>
+      function luaChon(nguoiChon) {
+        const cacLuaChon = ["đá", "giấy", "kéo"];
+        const ngaunhien = Math.floor(Math.random() * cacLuaChon.length);
+        const mayChon = cacLuaChon[ngaunhien];
+        let ketQua;
+        if (nguoiChon === mayChon) {
+          ketQua = "Hòa!";
+        } else if (
+          (nguoiChon === "đá" && mayChon === "kéo") ||
+          (nguoiChon === "giấy" && mayChon === "đá") ||
+          (nguoiChon === "kéo" && mayChon === "giấy")
+        ) {
+          ketQua = "Bạn thắng!";
+        } else {
+          ketQua = "Bạn thua!";
+        }
+        document.getElementById("ketqua").innerHTML =
+          `Bạn chọn: ${nguoiChon}<br>
+           Máy chọn: ${mayChon}<br>
+           Kết quả: ${ketQua}`;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài 1</title>
+  </head>
+  <body>
+    <h2>Kiểm tra số chẵn hoặc lẽ</h2>
+    <label for="">Nhập số nguyên: </label>
+    <input type="text" name="" id="songuyen" />
+    <br />
+    <button onclick="kiemTra()">Kết quả:</button>
+    <h3 id="ketqua"></h3>
+
+    <script>
+      function kiemTra() {
+        let n = document.getElementById("songuyen").value;
+        if (n % 2 == 0) {
+          document.getElementById("ketqua").innerHTML = "Kết quả: số chẵn";
+        } else {
+          document.getElementById("ketqua").innerHTML = "Kết quả: số lẻ";
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quay thưởng may mắn</title>
+  </head>
+  <body>
+    <h2>Chương trình quay thưởng may mắn</h2>
+    <p>Nhấn nút bên dưới để nhận phần quà ngẫu nhiên:</p>
+    <button onclick="quayThuong()">Quay thưởng</button>
+    <h3 id="ketqua"></h3>
+    <script>
+      function quayThuong() {
+        const danhSachPhanThuong = [
+          "Một chiếc điện thoại",
+          "Một chiếc tai nghe",
+          "Một chiếc balo",
+          "Một ly trà sữa",
+          "Một voucher mua sắm",
+          "Chúc bạn may mắn lần sau!",
+        ];
+        const viTriNgauNhien = Math.floor(
+          Math.random() * danhSachPhanThuong.length,
+        );
+        const phanThuong = danhSachPhanThuong[viTriNgauNhien];
+        document.getElementById("ketqua").innerHTML =
+          "Phần thưởng của bạn: " + phanThuong;
+      }
+    </script>
+  </body>
+</html>

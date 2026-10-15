@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Máy tính đơn giản</title>
+  </head>
+  <body>
+    <h2>Máy tính đơn giản</h2>
+
+    <label for="soThuNhat">Số thứ nhất:</label>
+    <input type="number" id="soThuNhat" placeholder="Nhập số thứ nhất" />
+    <br /><br />
+
+    <label for="soThuHai">Số thứ hai:</label>
+    <input type="number" id="soThuHai" placeholder="Nhập số thứ hai" />
+    <br /><br />
+
+    <button onclick="tinhToan('+')">Cộng</button>
+    <button onclick="tinhToan('-')">Trừ</button>
+    <button onclick="tinhToan('*')">Nhân</button>
+    <button onclick="tinhToan('/')">Chia</button>
+
+    <h3 id="ketqua">Kết quả sẽ hiển thị ở đây</h3>
+
+    <script>
+      function tinhToan(phepTinh) {
+        const soThuNhat = document.getElementById("soThuNhat").value;
+        const soThuHai = document.getElementById("soThuHai").value;
+        const ketqua = document.getElementById("ketqua");
+
+        if (soThuNhat === "" || soThuHai === "") {
+          ketqua.innerHTML = "Vui lòng nhập đầy đủ hai số!";
+          return;
+        }
+
+        const a = Number(soThuNhat);
+        const b = Number(soThuHai);
+        let ketQuaTinhToan;
+
+        switch (phepTinh) {
+          case "+":
+            ketQuaTinhToan = a + b;
+            break;
+
+          case "-":
+            ketQuaTinhToan = a - b;
+            break;
+
+          case "*":
+            ketQuaTinhToan = a * b;
+            break;
+
+          case "/":
+            if (b === 0) {
+              ketqua.innerHTML = "Không thể chia cho 0!";
+              return;
+            }
+            ketQuaTinhToan = a / b;
+            break;
+        }
+
+        ketqua.innerHTML = "Kết quả: " + ketQuaTinhToan;
+      }
+    </script>
+  </body>
+</html>
